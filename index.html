@@ -1,83 +1,151 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 	<head>
-		<title>Benjamin Gimenez - Race Car Driver</title>
-		<meta charset="utf-8" />
+		<title>Welcome - Benjamin Gimenez</title> <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
-			/* Ajustes para el estilo minimalista oscuro */
 			body, #page-wrapper, #wrapper, .wrapper, #footer {
 				background-color: #000000 !important;
 				background-image: none !important;
 				color: #ffffff !important;
 			}
-			h1, h2, h3, p, a, strong { color: #ffffff !important; }
-			.wrapper.style1 { background: #000000 !important; border: none !important; }
-			#hero-header h1 { letter-spacing: 8px; font-weight: 800; }
+			/* Punto 2: Logo Flotante */
+			.floating-logo {
+				position: fixed;
+				bottom: 20px;
+				right: 20px;
+				width: 100px; /* Ajusta según el tamaño de tu logo */
+				z-index: 9999;
+			}
+			/* Punto 3: Texto sobre Video */
+			.video-overlay-text {
+				position: absolute;
+				left: 5%;
+				top: 50%;
+				transform: translateY(-50%);
+				color: #ff0000;
+				z-index: 2;
+				text-align: left;
+				max-width: 40%;
+			}
+			.video-overlay-text h2 {
+				font-size: 3.5rem;
+				line-height: 1.1;
+				font-weight: 900;
+				color: #ff0000 !important;
+				margin-bottom: 10px;
+				text-transform: uppercase;
+			}
+			.video-overlay-text p {
+				font-size: 1.2rem;
+				color: #ff0000 !important;
+				font-weight: 600;
+			}
+			/* Punto 1: Presentación con imagen de fondo */
+			.about-section {
+				background: url('images/tu-foto-fondo.jpg') no-repeat center right;
+				background-size: cover;
+				padding: 100px 0;
+				display: flex;
+				justify-content: flex-start;
+			}
+			.about-content {
+				background: rgba(0,0,0,0.7);
+				padding: 40px;
+				max-width: 500px;
+				margin-left: 5%;
+			}
+			/* Punto 5: Línea roja con texto deslizante */
+			.marquee-separator {
+				background-color: #ff0000;
+				color: white;
+				padding: 10px 0;
+				overflow: hidden;
+				white-space: nowrap;
+			}
+			.marquee-text {
+				display: inline-block;
+				padding-left: 100%;
+				animation: marquee 15s linear infinite;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+			@keyframes marquee {
+				0% { transform: translate(0, 0); }
+				100% { transform: translate(-100%, 0); }
+			}
+			/* Punto 7: Nombre lateral */
+			.side-name {
+				color: #ff0000 !important;
+				font-size: 5rem;
+				font-weight: 900;
+				line-height: 0.9;
+				text-align: left;
+				text-transform: uppercase;
+				margin: 50px 0;
+			}
 		</style>
 	</head>
 	<body class="is-preload">
 
-		<section id="hero-header" style="position: relative; height: 100vh; width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #000;">
+		<img src="images/tu-logo.png" class="floating-logo" alt="Logo">
+
+		<section id="hero-header" style="position: relative; height: 100vh; width: 100%; overflow: hidden; background: #000;">
 			<video autoplay muted loop playsinline style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: 0; transform: translate(-50%, -50%); object-fit: cover;">
 				<source src="images/fondo.mp4" type="video/mp4">
 			</video>
-			<div style="z-index: 1; text-align: center; color: white; text-shadow: 2px 2px 15px rgba(0,0,0,1);">
-				<h1 style="font-size: 4rem; margin: 0;">BENJAMIN GIMENEZ</h1>
-				<p style="font-size: 1.2rem; text-transform: uppercase; letter-spacing: 3px;">Race Car Driver</p>
+			<div class="video-overlay-text">
+				<h2>Eyes on the goal,<br>mind disciplined,<br>no distractions.</h2>
+				<p>Benjamin Gimenez, Race car driver</p>
 			</div>
 		</section>
 
 		<div id="page-wrapper">
 
-			<section id="intro" class="wrapper style1">
-				<div class="container">
-					<header class="major" style="text-align: center;">
-						<h2 style="font-size: 2.5rem; margin-bottom: 30px;">SOBRE MÍ</h2>
-						<p style="line-height: 1.8; max-width: 800px; margin: 0 auto;">
-							My name is Benjamin Gimenez, a dedicated and ambitious race car driver. 
-							At 15 years old, I pursue my dream of becoming a professional driver with passion, 
-							sacrifice, and hard work. Every training session represents a new stage in this 
-							demanding journey, where I constantly push my limits and achieve my personal goals.
-						</p>
-					</header>
+			<section id="intro" class="wrapper about-section">
+				<div class="about-content">
+					<h2 style="font-size: 2.5rem;">ABOUT ME</h2>
+					<p>My name is Benjamin Gimenez, a dedicated and ambitious race car driver. At 15 years old, I pursue my dream of becoming a professional driver with passion, sacrifice, and hard work. Every training session represents a new stage in this demanding journey, where I constantly push my limits and achieve my personal goals.</p>
 				</div>
 			</section>
 
+			<div class="marquee-separator">
+				<div class="marquee-text">Benjamin Gimenez • Benjamin Gimenez • Benjamin Gimenez • Benjamin Gimenez • </div>
+			</div>
+
+			<section class="wrapper style1" style="text-align: center; padding: 100px 0;">
+				<div class="container">
+					<h2 style="font-size: 3rem; line-height: 1.2;">"Of all those who came, he is the one who stands out the most"</h2>
+					<p style="font-size: 1.2rem; margin-top: 20px;">Martin Videla - MV Racing Team</p>
+				</div>
+			</section>
+
+			<div class="container">
+				<div class="side-name">
+					BENJAMIN<br>GIMENEZ
+				</div>
+			</div>
+
 			<section id="footer" class="wrapper">
 				<div class="container">
-					<header class="style1">
-						<h2>Contacto</h2>
-						<p>¿Interesado en patrocinio o colaboración? Ponte en contacto conmigo.</p>
-					</header>
 					<div class="row">
-						<div class="col-12">
-							<section class="feature-list small">
-								<div class="row" style="justify-content: center; text-align: center;">
-									<div class="col-4 col-12-small">
-										<section>
-											<h3 class="icon solid fa-comment">Social</h3>
-											<p>
-												<a href="TU_LINK_INSTAGRAM">Instagram</a><br />
-												<a href="TU_LINK_LINKEDIN">LinkedIn</a>
-											</p>
-										</section>
-									</div>
-									<div class="col-4 col-12-small">
-										<section>
-											<h3 class="icon solid fa-envelope">Email</h3>
-											<p>tuemail@ejemplo.com</p>
-										</section>
-									</div>
-								</div>
-							</section>
+						<div class="col-6 col-12-medium">
+							<h3>Follow Me</h3>
+							<ul class="actions stacked">
+								<li><a href="#">Instagram</a></li>
+								<li><a href="#">TikTok</a></li>
+								<li><a href="#">Facebook</a></li>
+								<li><a href="#">YouTube</a></li>
+							</ul>
 						</div>
-					</div>
-					<div id="copyright" style="padding-top: 50px; text-align: center;">
-						<ul>
-							<li>&copy; Benjamin Gimenez.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
+						<div class="col-6 col-12-medium">
+							<h3>Contact Me</h3>
+							<p>
+								Email: <a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a><br />
+								Phone: +XX XXX XXXXXXX
+							</p>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -85,10 +153,6 @@
 		</div>
 
 		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.dropotron.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 
 	</body>
